@@ -1,5 +1,8 @@
 import psycopg2 as pg2
-
+'''
+Description:
+    DB connect 체크하는 test 파일
+'''
 try:
     dbconn = pg2.connect(host='localhost',
                          port='5432',

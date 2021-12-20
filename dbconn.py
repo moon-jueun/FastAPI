@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 class DBconn:
     def __init__(self):
@@ -10,7 +11,7 @@ class DBconn:
         self.DBNAME = 'je_test'
 
     def get_db_engine(self):
-        ''' ₩
+        '''
         Function Description
         1) serssionmaker():
             actual database session
@@ -21,5 +22,6 @@ class DBconn:
         url = f'postgresql://{self.user_name}:{self.password}@localhost:{self.port}/{self.dbname}'
         engine = create_engine(url, convert_unicode=False, encoding='utf-8')
         SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+        Base = declarative_base()
 
         return engine

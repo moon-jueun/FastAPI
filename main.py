@@ -5,11 +5,11 @@ from dbconn import DBconn
 from models import DCM
 
 app = FastAPI()
-@app.get("/users/")
+@app.get("/dcmf/")
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/items/{item_id}")
+@app.get("/dcms/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 

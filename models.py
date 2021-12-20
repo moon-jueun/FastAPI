@@ -5,7 +5,6 @@ from sqlalchemy.orm import relationship
 
 dbconn = DBconn()
 Base = declarative_base()
-Base.meta.create_all(bind=dbconn.get_db_engine())
 
 class DCM(Base):
     __tablename__ = 'dcm'
